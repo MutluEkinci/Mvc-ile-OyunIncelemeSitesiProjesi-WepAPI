@@ -77,7 +77,7 @@ namespace OyunİncelemeSitesiProjesi.Controllers
             //string json = client.DownloadString(url);
 
             //JavaScriptSerializer ser = new JavaScriptSerializer();
-            //İletisim iletisim = ser.Deserialize<İletisim>(json);
+            ////İletisim iletisim = ser.Deserialize<İletisim>(json);
 
 
             HttpClient istemci = new HttpClient();

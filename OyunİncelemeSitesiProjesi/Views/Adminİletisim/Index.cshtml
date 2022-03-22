@@ -1,0 +1,55 @@
+﻿@model IEnumerable<OyunİncelemeSitesiProjesi.Models.İletisim>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Mesajlar</h1>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Ad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Soyad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mesaj)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tarih)
+        </th>
+        <th>Detay/Sil</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.Ad
+            </td>
+            <td>
+                @item.Soyad
+            </td>
+            <td>
+                @item.Mail
+            </td>
+            <td>
+                @item.Mesaj.Substring(0, 15)...
+            </td>
+            <td>
+                @(((DateTime)item.Tarih).ToString("dd/MMM/yyyy"))
+            </td>
+            <td>
+                @Html.ActionLink("Detaylar", "Details", new { id = item.MesajID }, new { @class = "btn btn-info" }) |
+                @Html.ActionLink("Sil", "Delete", new { id = item.MesajID }, new { @class = "btn btn-danger", onclick = "return confirm('Gerçekten Silmek İstiyor Musunuz?')" })
+            </td>
+        </tr>
+    }
+
+</table>

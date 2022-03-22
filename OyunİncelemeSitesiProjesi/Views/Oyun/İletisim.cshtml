@@ -1,0 +1,46 @@
+﻿@model OyunİncelemeSitesiProjesi.Models.ViewModel.Oyun_VM
+
+@{
+    ViewBag.Title = "İletişim";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("İletisim", "Oyun", FormMethod.Post))
+{
+    <table class="container">
+        <tr>
+            <td>
+                <h3>
+                    <b>
+                        Bizimle İletişime Geçin
+                    </b>
+                </h3>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.TextBoxFor(x => x.İletisimEntity.Ad, null, new { required = true, minlength = "3", maxlength = "50", placeholder = "Adınızı giriniz...", style = "color:black" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.TextBoxFor(x => x.İletisimEntity.Soyad, null, new { required = true, minlength = "3", maxlength = "50", placeholder = "Soyadınızı Giriniz...", style = "color:black" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.TextBoxFor(x => x.İletisimEntity.Mail, null, new { required = true, minlength = "10", maxlength = "50", placeholder = "Mailinizi Buraya Giriniz...", style = "color:black" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.TextAreaFor(x => x.İletisimEntity.Mesaj, new { required = true, minlength = "10", maxlength = "500", @style = "width:400px; height:200px; resize:none;color:black;", placeholder = "Yazınızı buraya giriniz..." })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" name="İletişim" value="Gönder" class="btn btn-success" onclose="return alert('Mailiniz bize ulaşmıştır.Geri bildiriminiz için teşekkür ederiz :)')" />
+            </td>
+        </tr>
+    </table>
+}

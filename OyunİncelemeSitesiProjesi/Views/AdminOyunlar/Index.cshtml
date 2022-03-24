@@ -65,7 +65,7 @@
                 @Html.DisplayFor(modelItem => item.Resim)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CikisYili)
+                @(((DateTime)item.CikisYili).ToString("dd/MMM/yyyy"))
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Puan)

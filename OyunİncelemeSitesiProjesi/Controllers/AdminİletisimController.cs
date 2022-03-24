@@ -20,9 +20,6 @@ namespace OyunİncelemeSitesiProjesi.Controllers
     {
         // GET: Adminİletisim
 
-        Oyun_VM oyun_VM = new Oyun_VM();
-
-        private OyunContext db = new OyunContext();
         public ActionResult Index()
         {
             //var apiUrl = "http://localhost:65191/api/%C4%B0letisim/";
